@@ -42,10 +42,10 @@
 
     <style>
         .glass {
-            background: rgba(21, 26, 37, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(21, 26, 37, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .text-gradient {
             background: linear-gradient(to right, #6366f1, #ec4899, #06b6d4);
@@ -64,12 +64,14 @@
             0%, 80%, 100% { transform: scale(0); }
             40% { transform: scale(1); }
         }
+        .chat-scroll::-webkit-scrollbar { width: 5px; }
+        .chat-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
     </style>
 </head>
 <body class="font-sans bg-brand-dark text-white overflow-x-hidden selection:bg-brand-secondary selection:text-white">
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/919620024812?text=Hi%20Digital%20Pixel%20Forge,%20I%20want%20to%20discuss%20a%20project!" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
+    <a href="https://wa.me/919620024812?text=Hi%20Digital%20Pixel%20Forge,%20I%20want%20to%20discuss%20a%20project!" target="_blank" class="fixed bottom-6 left-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
@@ -164,10 +166,10 @@
     <section id="stats" class="py-20 relative overflow-hidden bg-brand-surface/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2 counter" data-target="50">50+</h3><p class="text-brand-primary font-mono uppercase tracking-widest text-sm">Projects Delivered</p></div>
-                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2 counter" data-target="98">98%</h3><p class="text-brand-secondary font-mono uppercase tracking-widest text-sm">Client Satisfaction</p></div>
-                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2 counter" data-target="5">5+</h3><p class="text-brand-accent font-mono uppercase tracking-widest text-sm">Years Experience</p></div>
-                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2 counter" data-target="24">24/7</h3><p class="text-white font-mono uppercase tracking-widest text-sm">Support</p></div>
+                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2">50+</h3><p class="text-brand-primary font-mono uppercase tracking-widest text-sm">Projects Delivered</p></div>
+                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2">98%</h3><p class="text-brand-secondary font-mono uppercase tracking-widest text-sm">Client Satisfaction</p></div>
+                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2">5+</h3><p class="text-brand-accent font-mono uppercase tracking-widest text-sm">Years Experience</p></div>
+                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2">24/7</h3><p class="text-white font-mono uppercase tracking-widest text-sm">Support</p></div>
             </div>
         </div>
     </section>
@@ -208,13 +210,160 @@
         <p class="text-slate-500 text-sm">&copy; 2026 Pixel Forge. All rights reserved. Developed by Faisu & Jasmine 💨🔥</p>
     </footer>
 
+    <!-- SMART AI CHATBOT WIDGET -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <div id="chat-window" class="hidden w-80 md:w-96 bg-brand-surface border border-white/10 rounded-2xl shadow-2xl mb-4 overflow-hidden flex flex-col h-[500px] transition-all duration-300 origin-bottom-right transform scale-95 opacity-0">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-brand-primary to-brand-secondary p-4 text-white flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
+                    <div>
+                        <span class="font-bold block text-sm">ForgeBot AI 🤖</span>
+                        <span class="text-xs text-white/80">Active • Ask me anything</span>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="hover:bg-white/20 p-1.5 rounded-lg transition"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <!-- Messages Container -->
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 chat-scroll bg-brand-dark/90 text-sm">
+                <div class="flex justify-start">
+                    <div class="bg-white/15 backdrop-blur-md border border-white/10 text-slate-200 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm max-w-[85%]">
+                        Hello! 👋 I'm ForgeBot, your AI guide to Digital Pixel Forge. What are we building today?
+                    </div>
+                </div>
+                <!-- Quick Chips -->
+                <div class="flex flex-wrap gap-2 pt-2" id="quick-chips">
+                    <button onclick="sendChip('Pricing & Cost')" class="text-xs bg-brand-primary/20 hover:bg-brand-primary/40 border border-brand-primary/30 text-brand-primary px-3 py-1.5 rounded-full transition">💰 Pricing</button>
+                    <button onclick="sendChip('Services Offered')" class="text-xs bg-brand-primary/20 hover:bg-brand-primary/40 border border-brand-primary/30 text-brand-primary px-3 py-1.5 rounded-full transition">🛠️ Services</button>
+                    <button onclick="sendChip('Bangalore Office')" class="text-xs bg-brand-primary/20 hover:bg-brand-primary/40 border border-brand-primary/30 text-brand-primary px-3 py-1.5 rounded-full transition">📍 Location</button>
+                    <button onclick="sendChip('WhatsApp Contact')" class="text-xs bg-green-500/20 hover:bg-green-500/40 border border-green-500/30 text-green-400 px-3 py-1.5 rounded-full transition">💬 WhatsApp</button>
+                </div>
+            </div>
+
+            <!-- Input Box -->
+            <div class="p-3 bg-brand-surface border-t border-white/10 flex gap-2 items-center">
+                <input type="text" id="user-input" placeholder="Ask ForgeBot anything..." class="flex-1 bg-brand-dark border border-white/10 rounded-full px-4 py-2.5 text-sm text-white focus:border-brand-primary outline-none transition" onkeypress="handleKey(event)">
+                <button onclick="sendUserMessage()" class="bg-gradient-to-r from-brand-primary to-brand-secondary text-white w-10 h-10 rounded-full flex items-center justify-center hover:opacity-90 transition"><i class="fa-solid fa-paper-plane text-xs"></i></button>
+            </div>
+        </div>
+
+        <!-- Chat Toggle Button -->
+        <button onclick="toggleChat()" class="bg-gradient-to-r from-brand-primary to-brand-secondary hover:shadow-[0_0_25px_rgba(99,102,241,0.6)] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl transition transform hover:scale-110 animate-bounce">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+    </div>
+
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ once: true, duration: 800 });
+
+        // Chatbot Logic
+        const chatWindow = document.getElementById('chat-window');
+        const messages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const quickChips = document.getElementById('quick-chips');
+        let isOpen = false;
+
+        function toggleChat() {
+            isOpen = !isOpen;
+            if (isOpen) {
+                chatWindow.classList.remove('hidden');
+                setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+                userInput.focus();
+            } else {
+                chatWindow.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => chatWindow.classList.add('hidden'), 300);
+            }
+        }
+
+        function handleKey(e) {
+            if (e.key === 'Enter') sendUserMessage();
+        }
+
+        function sendChip(text) {
+            userInput.value = text;
+            sendUserMessage();
+        }
+
+        function sendUserMessage() {
+            const txt = userInput.value.trim();
+            if (!txt) return;
+            
+            appendMsg(txt, 'user');
+            userInput.value = '';
+            if (quickChips) quickChips.style.display = 'none';
+
+            showTyping();
+            setTimeout(() => {
+                removeTyping();
+                const reply = getSmartReply(txt);
+                appendMsg(reply, 'bot');
+            }, 1000);
+        }
+
+        function appendMsg(text, sender) {
+            const div = document.createElement('div');
+            div.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'} animate-[fadeIn_0.3s_ease-out]`;
+            const bubble = document.createElement('div');
+            bubble.className = `px-4 py-3 rounded-2xl shadow-sm max-w-[85%] text-sm leading-relaxed ${
+                sender === 'user' 
+                ? 'bg-brand-primary text-white rounded-tr-none' 
+                : 'bg-white/15 backdrop-blur-md border border-white/10 text-slate-200 rounded-tl-none'
+            }`;
+            bubble.innerText = text;
+            div.appendChild(bubble);
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function showTyping() {
+            const div = document.createElement('div');
+            div.id = 'typing';
+            div.className = 'flex justify-start';
+            div.innerHTML = `
+                <div class="bg-white/15 backdrop-blur-md border border-white/10 px-4 py-3 rounded-2xl rounded-tl-none flex gap-1.5 items-center h-10">
+                    <div class="w-2 h-2 bg-slate-300 rounded-full typing-dot"></div>
+                    <div class="w-2 h-2 bg-slate-300 rounded-full typing-dot"></div>
+                    <div class="w-2 h-2 bg-slate-300 rounded-full typing-dot"></div>
+                </div>
+            `;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function removeTyping() {
+            const t = document.getElementById('typing');
+            if (t) t.remove();
+        }
+
+        function getSmartReply(msg) {
+            msg = msg.toLowerCase();
+            if (msg.includes('price') || msg.includes('cost') || msg.includes('budget') || msg.includes('pricing')) {
+                return "Our projects start at ₹25,000 for standard high-performance websites. Custom web and mobile apps vary based on requirements. Want to chat on WhatsApp for a custom estimate? (+91 9620024812)";
+            }
+            if (msg.includes('service') || msg.includes('offer') || msg.includes('do') || msg.includes('development')) {
+                return "We specialize in Web Development (Next.js/React), Mobile App Engineering (iOS/Android), and Scalable Cloud DevOps architecture.";
+            }
+            if (msg.includes('location') || msg.includes('address') || msg.includes('where') || msg.includes('bangalore')) {
+                return "We are based at Third Floor, V268, Royal Space, HSR Layout, Bengaluru, Karnataka 560068. Come visit us!";
+            }
+            if (msg.includes('whatsapp') || msg.includes('contact') || msg.includes('phone') || msg.includes('call')) {
+                return "You can reach us directly on WhatsApp at +91 9620024812 or call anytime for instant responses!";
+            }
+            if (msg.includes('faisu') || msg.includes('jasmine')) {
+                return "Digital Pixel Forge is co-founded by Faisu and Jasmine — an elite engineering and creative duo!";
+            }
+            return "That's a great question! For immediate assistance and detailed consultation, connect with us directly on WhatsApp at +91 9620024812.";
+        }
+
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Message Sent! 🚀 We will contact you shortly.');
+            alert('Message Sent Successfully! 🚀 Pixel Forge team will connect with you shortly.');
             this.reset();
         });
     </script>
