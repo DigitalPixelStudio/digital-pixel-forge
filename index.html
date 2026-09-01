@@ -210,9 +210,10 @@
         <p class="text-slate-500 text-sm">&copy; 2026 Pixel Forge. All rights reserved. Developed by Faisu & Jasmine 💨🔥</p>
     </footer>
 
-    <!-- SMART AI CHATBOT WIDGET -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="chat-window" class="hidden w-80 md:w-96 bg-brand-surface border border-white/10 rounded-2xl shadow-2xl mb-4 overflow-hidden flex flex-col h-[500px] transition-all duration-300 origin-bottom-right transform scale-95 opacity-0">
+    <!-- SMART AI CHATBOT WIDGET (FIXED VISIBILITY & POSITION) -->
+    <div class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
+        <!-- Chat Window -->
+        <div id="chat-window" class="hidden w-80 md:w-96 bg-brand-surface border border-white/20 rounded-2xl shadow-2xl mb-4 overflow-hidden flex flex-col h-[500px] transition-all duration-300 origin-bottom-right transform scale-95 opacity-0">
             <!-- Header -->
             <div class="bg-gradient-to-r from-brand-primary to-brand-secondary p-4 text-white flex justify-between items-center">
                 <div class="flex items-center gap-3">
@@ -222,11 +223,11 @@
                         <span class="text-xs text-white/80">Active • Ask me anything</span>
                     </div>
                 </div>
-                <button onclick="toggleChat()" class="hover:bg-white/20 p-1.5 rounded-lg transition"><i class="fa-solid fa-xmark"></i></button>
+                <button onclick="toggleChat()" class="hover:bg-white/20 p-1.5 rounded-lg transition"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             
             <!-- Messages Container -->
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 chat-scroll bg-brand-dark/90 text-sm">
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 chat-scroll bg-brand-dark/95 text-sm">
                 <div class="flex justify-start">
                     <div class="bg-white/15 backdrop-blur-md border border-white/10 text-slate-200 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm max-w-[85%]">
                         Hello! 👋 I'm ForgeBot, your AI guide to Digital Pixel Forge. What are we building today?
@@ -244,12 +245,12 @@
             <!-- Input Box -->
             <div class="p-3 bg-brand-surface border-t border-white/10 flex gap-2 items-center">
                 <input type="text" id="user-input" placeholder="Ask ForgeBot anything..." class="flex-1 bg-brand-dark border border-white/10 rounded-full px-4 py-2.5 text-sm text-white focus:border-brand-primary outline-none transition" onkeypress="handleKey(event)">
-                <button onclick="sendUserMessage()" class="bg-gradient-to-r from-brand-primary to-brand-secondary text-white w-10 h-10 rounded-full flex items-center justify-center hover:opacity-90 transition"><i class="fa-solid fa-paper-plane text-xs"></i></button>
+                <button onclick="sendUserMessage()" class="bg-gradient-to-r from-brand-primary to-brand-secondary text-white w-10 h-10 rounded-full flex items-center justify-center hover:opacity-90 transition shadow-lg"><i class="fa-solid fa-paper-plane text-xs"></i></button>
             </div>
         </div>
 
-        <!-- Chat Toggle Button -->
-        <button onclick="toggleChat()" class="bg-gradient-to-r from-brand-primary to-brand-secondary hover:shadow-[0_0_25px_rgba(99,102,241,0.6)] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl transition transform hover:scale-110 animate-bounce">
+        <!-- Chat Toggle Button (Always Visible) -->
+        <button onclick="toggleChat()" class="bg-gradient-to-r from-brand-primary to-brand-secondary hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-3xl transition transform hover:scale-110">
             <i class="fa-solid fa-robot"></i>
         </button>
     </div>
@@ -308,7 +309,7 @@
 
         function appendMsg(text, sender) {
             const div = document.createElement('div');
-            div.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'} animate-[fadeIn_0.3s_ease-out]`;
+            div.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
             const bubble = document.createElement('div');
             bubble.className = `px-4 py-3 rounded-2xl shadow-sm max-w-[85%] text-sm leading-relaxed ${
                 sender === 'user' 
