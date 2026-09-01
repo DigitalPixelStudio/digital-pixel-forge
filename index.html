@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Forge📡 | Future-Ready Digital Solutions</title>
+    <title>Digital Pixel Forge 🔥 | Elite Web, App & Cloud Solutions</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,11 +28,11 @@
                     },
                     colors: {
                         brand: {
-                            dark: '#0B0E14',
+                            dark: '#07090E',
                             primary: '#6366f1',
                             secondary: '#ec4899',
                             accent: '#06b6d4',
-                            surface: '#151a25'
+                            surface: '#111827'
                         }
                     }
                 }
@@ -42,10 +42,10 @@
 
     <style>
         .glass {
-            background: rgba(21, 26, 37, 0.85);
+            background: rgba(17, 24, 39, 0.75);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .text-gradient {
             background: linear-gradient(to right, #6366f1, #ec4899, #06b6d4);
@@ -53,9 +53,12 @@
             -webkit-text-fill-color: transparent;
         }
         .card-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.3);
-            border-color: rgba(99, 102, 241, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.35);
+            border-color: rgba(99, 102, 241, 0.6);
+        }
+        .glow-bg {
+            background: radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.15) 0%, rgba(236, 72, 153, 0.1) 40%, transparent 70%);
         }
         .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
         .typing-dot:nth-child(1) { animation-delay: -0.32s; }
@@ -68,7 +71,7 @@
         .chat-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
     </style>
 </head>
-<body class="font-sans bg-brand-dark text-white overflow-x-hidden selection:bg-brand-secondary selection:text-white">
+<body class="font-sans bg-brand-dark text-white overflow-x-hidden selection:bg-brand-secondary selection:text-white glow-bg">
 
     <!-- FLOATING WHATSAPP BUTTON -->
     <a href="https://wa.me/919620024812?text=Hi%20Digital%20Pixel%20Forge,%20I%20want%20to%20discuss%20a%20project!" target="_blank" class="fixed bottom-6 left-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
@@ -80,96 +83,228 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo(0,0)">
-                    <div class="w-10 h-10 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center shadow-lg group-hover:rotate-12 transition">
+                    <div class="w-10 h-10 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition">
                         <i class="fa-solid fa-microchip text-white"></i>
                     </div>
-                    <span class="font-black text-2xl tracking-tight text-white group-hover:text-brand-accent transition">PIXEL FORGE<span class="text-brand-secondary">📡</span></span>
+                    <span class="font-black text-xl tracking-tight text-white">DIGITAL PIXEL FORGE<span class="text-brand-secondary">📡</span></span>
                 </div>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#services" class="text-slate-300 hover:text-white font-medium transition">Services</a>
-                    <a href="#process" class="text-slate-300 hover:text-white font-medium transition">Process</a>
-                    <a href="#stats" class="text-slate-300 hover:text-white font-medium transition">Stats</a>
-                    <a href="https://wa.me/919620024812" target="_blank" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white px-6 py-2.5 rounded-full font-bold transition shadow-lg shadow-green-500/20 flex items-center gap-2 transform hover:scale-105">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> Chat Now
-                    </a>
+                <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
+                    <a href="#offerings" class="text-slate-300 hover:text-white transition">Offerings</a>
+                    <a href="#showcase" class="text-slate-300 hover:text-white transition">Showcase</a>
+                    <a href="#process" class="text-slate-300 hover:text-white transition">Process</a>
+                    <a href="#stats" class="text-slate-300 hover:text-white transition">Stats</a>
+                    <a href="#contact" class="bg-gradient-to-r from-brand-primary to-brand-secondary text-white px-5 py-2.5 rounded-full font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition">Get Quote</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <!-- HERO SECTION WITH DYNAMIC VISUAL -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right" data-aos-duration="1000">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-sm font-semibold mb-6">
-                    <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span> Available for New Projects
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-primary/10 border border-brand-primary/30 text-brand-primary text-xs font-bold uppercase tracking-wider mb-6">
+                    <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span> Elite Software & App Studio
                 </div>
-                <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
-                    We Build <br>
-                    <span class="text-gradient">Digital Reality.</span>
+                <h1 class="text-4xl sm:text-6xl font-black leading-tight mb-6">
+                    Forging The Future Of <br>
+                    <span class="text-gradient">Digital Intelligence.</span>
                 </h1>
-                <p class="text-lg text-slate-400 mb-8 max-w-lg leading-relaxed">
-                    From high-performance web apps to scalable cloud infrastructure. Pixel Forge turns your vision into a market-dominating product in Bangalore. Led by Faisu & Jasmine.
+                <p class="text-base sm:text-lg text-slate-400 mb-8 max-w-lg leading-relaxed">
+                    Co-founded by Faisu & Jasmine. We engineer lightning-fast web applications, cross-platform mobile ecosystems, and robust cloud architectures based in HSR Layout, Bengaluru.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="bg-white text-brand-dark hover:bg-slate-200 px-8 py-4 rounded-full font-bold text-lg transition shadow-[0_0_20px_rgba(255,255,255,0.3)] flex items-center justify-center gap-2">
-                        Start Project <i class="fa-solid fa-arrow-right"></i>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-white text-brand-dark hover:bg-slate-200 px-8 py-4 rounded-full font-bold transition shadow-xl flex items-center gap-2">
+                        Start Your Project <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    <a href="https://wa.me/919620024812" target="_blank" class="glass text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition flex items-center justify-center gap-2 border border-white/10">
-                        <i class="fa-brands fa-whatsapp"></i> 9620024812
+                    <a href="https://wa.me/919620024812" target="_blank" class="glass text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold transition flex items-center gap-2 border border-white/10">
+                        <i class="fa-brands fa-whatsapp text-green-400"></i> WhatsApp Us
                     </a>
                 </div>
             </div>
-            <div class="relative hidden lg:block" data-aos="fade-left" data-aos-duration="1000">
-                <div class="relative z-10">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Cyberpunk Tech" class="rounded-2xl shadow-2xl border border-white/10 w-full object-cover h-[500px]">
+            <div class="relative" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl glass p-2">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Cyberpunk Code Matrix" class="rounded-2xl w-full h-[420px] object-cover opacity-90 hover:scale-105 transition duration-700">
+                    <div class="absolute bottom-6 left-6 right-6 p-4 glass rounded-xl border border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-brand-accent font-mono block">LIVE SYSTEM ENGINE</span>
+                            <span class="font-bold text-sm">100% Secure & Scalable Architecture</span>
+                        </div>
+                        <span class="bg-green-500/20 text-green-400 text-xs px-3 py-1 rounded-full font-mono">ACTIVE</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services" class="py-24 relative">
+    <!-- DETAILED OFFERINGS SECTION -->
+    <section id="offerings" class="py-24 bg-brand-surface/40 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-5xl font-black mb-4">Our <span class="text-gradient">Expertise</span></h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">We engineer scalable ecosystems designed for maximum conversion and growth.</p>
+                <span class="text-brand-secondary font-mono text-xs uppercase tracking-widest">Comprehensive Solutions</span>
+                <h2 class="text-3xl md:text-5xl font-black mt-2 mb-4">Our Complete <span class="text-gradient">Offerings</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base">Everything your brand needs to scale, convert, and dominate online.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glass p-8 rounded-2xl card-hover transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-brand-primary/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-primary transition duration-300">
-                        <i class="fa-solid fa-laptop-code text-2xl text-brand-primary group-hover:text-white"></i>
+                <!-- Offering 1 -->
+                <div class="glass p-8 rounded-3xl card-hover transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-indigo-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-500 transition duration-300">
+                        <i class="fa-solid fa-code text-2xl text-indigo-400 group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Web Development</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Next.js, React, and modern web applications optimized for SEO and lightning speed.</p>
+                    <h3 class="text-xl font-bold mb-3">Custom Web Apps</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">High-performance Next.js, React, and Vite web applications designed for blazing speed and mobile responsiveness.</p>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300 border-t border-white/10 pt-4">
+                        <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i> PWA & Offline Support</li>
+                        <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i> Advanced SEO Optimization</li>
+                    </ul>
                 </div>
-                <div class="glass p-8 rounded-2xl card-hover transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-brand-secondary/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-secondary transition duration-300">
-                        <i class="fa-solid fa-mobile-screen-button text-2xl text-brand-secondary group-hover:text-white"></i>
+
+                <!-- Offering 2 -->
+                <div class="glass p-8 rounded-3xl card-hover transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-pink-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-pink-500 transition duration-300">
+                        <i class="fa-solid fa-mobile-screen text-2xl text-pink-400 group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Mobile Apps</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Native performance with Flutter & React Native for iOS and Android platforms.</p>
+                    <h3 class="text-xl font-bold mb-3">Mobile App Engineering</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Native-grade cross-platform mobile apps built with Flutter and React Native for seamless iOS and Android execution.</p>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300 border-t border-white/10 pt-4">
+                        <li><i class="fa-solid fa-check text-pink-400 mr-2"></i> iOS & Android Native UI</li>
+                        <li><i class="fa-solid fa-check text-pink-400 mr-2"></i> Smooth 60FPS Animations</li>
+                    </ul>
                 </div>
-                <div class="glass p-8 rounded-2xl card-hover transition duration-300 group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-brand-accent/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent transition duration-300">
-                        <i class="fa-solid fa-server text-2xl text-brand-accent group-hover:text-white"></i>
+
+                <!-- Offering 3 -->
+                <div class="glass p-8 rounded-3xl card-hover transition duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-cyan-500 transition duration-300">
+                        <i class="fa-solid fa-database text-2xl text-cyan-400 group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Cloud & DevOps</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">AWS, Supabase, MongoDB architecture with CI/CD pipelines ensuring zero downtime.</p>
+                    <h3 class="text-xl font-bold mb-3">Database & Cloud Backends</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Scalable Supabase, MongoDB Atlas, PostgreSQL, and Redis caching layers paired with FastAPI and Node.js.</p>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300 border-t border-white/10 pt-4">
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Secure JWT Authentication</li>
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Real-time WebSockets</li>
+                    </ul>
+                </div>
+
+                <!-- Offering 4 -->
+                <div class="glass p-8 rounded-3xl card-hover transition duration-300 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-500 transition duration-300">
+                        <i class="fa-solid fa-shield-halved text-2xl text-emerald-400 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Security & Rate Limiting</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Enterprise-grade security shields, sliding-window rate limiters, and DDoS mitigation to protect your APIs.</p>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300 border-t border-white/10 pt-4">
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Custom Rate Limiter Shield</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> SSL & Encrypted Headers</li>
+                    </ul>
+                </div>
+
+                <!-- Offering 5 -->
+                <div class="glass p-8 rounded-3xl card-hover transition duration-300 group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 bg-amber-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 transition duration-300">
+                        <i class="fa-solid fa-cloud-arrow-up text-2xl text-amber-400 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">CI/CD & Cloud Hosting</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Automated GitHub deployment pipelines, Vercel optimization, Docker containerization, and Cloudflare R2 storage.</p>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300 border-t border-white/10 pt-4">
+                        <li><i class="fa-solid fa-check text-amber-400 mr-2"></i> Zero-Downtime Deploys</li>
+                        <li><i class="fa-solid fa-check text-amber-400 mr-2"></i> Global CDN Integration</li>
+                    </ul>
+                </div>
+
+                <!-- Offering 6 -->
+                <div class="glass p-8 rounded-3xl card-hover transition duration-300 group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-500 transition duration-300">
+                        <i class="fa-solid fa-robot text-2xl text-purple-400 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI Bot Integration</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Custom intelligent chat assistants integrated directly into your web apps for automated customer support and lead capture.</p>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300 border-t border-white/10 pt-4">
+                        <li><i class="fa-solid fa-check text-purple-400 mr-2"></i> Instant Smart FAQ Bot</li>
+                        <li><i class="fa-solid fa-check text-purple-400 mr-2"></i> WhatsApp Direct Bridge</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISUAL SHOWCASE SECTION WITH REAL IMAGES -->
+    <section id="showcase" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-brand-primary font-mono text-xs uppercase tracking-widest">Visual Excellence</span>
+                <h2 class="text-3xl md:text-5xl font-black mt-2 mb-4">Engineering <span class="text-gradient">In Action</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base">Take a glimpse into our development workspace and high-tech output.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="relative rounded-3xl overflow-hidden group border border-white/10 h-80" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Code Workspace" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+                        <h4 class="font-bold text-lg text-white">Clean Code Architecture</h4>
+                        <p class="text-xs text-slate-300 mt-1">Modular, maintainable, and rigorously tested.</p>
+                    </div>
+                </div>
+                <div class="relative rounded-3xl overflow-hidden group border border-white/10 h-80" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Analytics Dashboard" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+                        <h4 class="font-bold text-lg text-white">Data-Driven Dashboards</h4>
+                        <p class="text-xs text-slate-300 mt-1">Real-time telemetry and user analytics.</p>
+                    </div>
+                </div>
+                <div class="relative rounded-3xl overflow-hidden group border border-white/10 h-80" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Team Collaboration" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+                        <h4 class="font-bold text-lg text-white">Strategic Execution</h4>
+                        <p class="text-xs text-slate-300 mt-1">Agile sprints and rapid delivery cycles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section id="process" class="py-24 bg-brand-surface/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-brand-accent font-mono text-xs uppercase tracking-widest">Step-by-Step Execution</span>
+                <h2 class="text-3xl md:text-5xl font-black mt-2 mb-4">How We <span class="text-gradient">Forge Success</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base">A streamlined pathway from raw concept to live production.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="glass p-6 rounded-3xl border border-white/10 relative" data-aos="fade-up" data-aos-delay="100">
+                    <span class="text-4xl font-black text-brand-primary opacity-40 absolute top-4 right-6 font-mono">01</span>
+                    <h3 class="font-bold text-lg mb-2 text-white mt-4">Discovery & Plan</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">We analyze your business model, goals, and technical requirements.</p>
+                </div>
+                <div class="glass p-6 rounded-3xl border border-white/10 relative" data-aos="fade-up" data-aos-delay="200">
+                    <span class="text-4xl font-black text-brand-secondary opacity-40 absolute top-4 right-6 font-mono">02</span>
+                    <h3 class="font-bold text-lg mb-2 text-white mt-4">UI/UX Prototype</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Designing high-fidelity, conversion-focused interfaces for seamless user flow.</p>
+                </div>
+                <div class="glass p-6 rounded-3xl border border-white/10 relative" data-aos="fade-up" data-aos-delay="300">
+                    <span class="text-4xl font-black text-brand-accent opacity-40 absolute top-4 right-6 font-mono">03</span>
+                    <h3 class="font-bold text-lg mb-2 text-white mt-4">Agile Coding</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Building the frontend, secure backend APIs, and database structures.</p>
+                </div>
+                <div class="glass p-6 rounded-3xl border border-white/10 relative" data-aos="fade-up" data-aos-delay="400">
+                    <span class="text-4xl font-black text-green-400 opacity-40 absolute top-4 right-6 font-mono">04</span>
+                    <h3 class="font-bold text-lg mb-2 text-white mt-4">Launch & Scale</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Deploying to cloud production with 24/7 monitoring and support.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- STATS SECTION -->
-    <section id="stats" class="py-20 relative overflow-hidden bg-brand-surface/50">
+    <section id="stats" class="py-20 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2">50+</h3><p class="text-brand-primary font-mono uppercase tracking-widest text-sm">Projects Delivered</p></div>
-                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2">98%</h3><p class="text-brand-secondary font-mono uppercase tracking-widest text-sm">Client Satisfaction</p></div>
-                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2">5+</h3><p class="text-brand-accent font-mono uppercase tracking-widest text-sm">Years Experience</p></div>
-                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2">24/7</h3><p class="text-white font-mono uppercase tracking-widest text-sm">Support</p></div>
+            <div class="glass p-12 rounded-3xl border border-white/10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="zoom-in"><h3 class="text-4xl md:text-6xl font-black text-white mb-2">50+</h3><p class="text-brand-primary font-mono uppercase tracking-widest text-xs">Projects Delivered</p></div>
+                <div data-aos="zoom-in"><h3 class="text-4xl md:text-6xl font-black text-white mb-2">98%</h3><p class="text-brand-secondary font-mono uppercase tracking-widest text-xs">Satisfaction Rate</p></div>
+                <div data-aos="zoom-in"><h3 class="text-4xl md:text-6xl font-black text-white mb-2">5+</h3><p class="text-brand-accent font-mono uppercase tracking-widest text-xs">Years Expertise</p></div>
+                <div data-aos="zoom-in"><h3 class="text-4xl md:text-6xl font-black text-white mb-2">24/7</h3><p class="text-white font-mono uppercase tracking-widest text-xs">Dedicated Support</p></div>
             </div>
         </div>
     </section>
@@ -178,27 +313,30 @@
     <section id="contact" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="glass rounded-3xl p-8 md:p-12 overflow-hidden relative border border-white/10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 class="text-3xl font-black mb-6">Let's Start Your <span class="text-gradient">Project</span></h2>
-                        <p class="text-slate-400 mb-8">Fill the form or reach us directly via WhatsApp.</p>
+                        <span class="text-brand-secondary font-mono text-xs uppercase tracking-widest">Get In Touch</span>
+                        <h2 class="text-3xl md:text-5xl font-black mt-2 mb-4">Let's Build Your <span class="text-gradient">Empire</span></h2>
+                        <p class="text-slate-400 mb-8 text-sm md:text-base leading-relaxed">Ready to transform your business? Fill out the form or connect instantly via WhatsApp with Faisu & Jasmine.</p>
+                        
                         <div class="space-y-6">
-                            <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 cursor-pointer" onclick="window.location.href='https://wa.me/919620024812'">
-                                <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400"><i class="fa-brands fa-whatsapp text-2xl"></i></div>
-                                <div><p class="text-xs text-slate-400 uppercase">WhatsApp Us</p><p class="font-bold text-lg">+91 9620024812</p></div>
+                            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 cursor-pointer hover:bg-white/10 transition" onclick="window.location.href='https://wa.me/919620024812'">
+                                <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center text-green-400"><i class="fa-brands fa-whatsapp text-2xl"></i></div>
+                                <div><p class="text-xs text-slate-400 uppercase tracking-wider">Direct WhatsApp</p><p class="font-bold text-lg">+91 9620024812</p></div>
                             </div>
-                            <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5">
-                                <div class="w-12 h-12 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary"><i class="fa-solid fa-location-dot text-2xl"></i></div>
-                                <div><p class="text-xs text-slate-400 uppercase">Visit Office</p><p class="font-bold text-lg">Third Floor, V268, Royal Space, HSR Layout, Bengaluru</p></div>
+                            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5">
+                                <div class="w-12 h-12 rounded-xl bg-brand-primary/20 flex items-center justify-center text-brand-primary"><i class="fa-solid fa-location-dot text-2xl"></i></div>
+                                <div><p class="text-xs text-slate-400 uppercase tracking-wider">Office Location</p><p class="font-bold text-sm">Third Floor, V268, Royal Space, HSR Layout, Bengaluru 560068</p></div>
                             </div>
                         </div>
                     </div>
+                    
                     <form id="contactForm" class="space-y-4">
-                        <input type="text" placeholder="Your Name" required class="w-full bg-brand-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-primary outline-none">
-                        <input type="tel" placeholder="Phone Number" required class="w-full bg-brand-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-primary outline-none">
-                        <input type="email" placeholder="Email Address" required class="w-full bg-brand-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-primary outline-none">
-                        <textarea rows="4" placeholder="Tell us about your project..." class="w-full bg-brand-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-primary outline-none"></textarea>
-                        <button type="submit" class="w-full bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold py-4 rounded-xl shadow-lg">Send Message</button>
+                        <input type="text" placeholder="Your Name" required class="w-full bg-brand-dark/60 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:border-brand-primary outline-none transition">
+                        <input type="tel" placeholder="Phone Number / WhatsApp" required class="w-full bg-brand-dark/60 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:border-brand-primary outline-none transition">
+                        <input type="email" placeholder="Email Address" required class="w-full bg-brand-dark/60 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:border-brand-primary outline-none transition">
+                        <textarea rows="4" placeholder="Tell us about your project requirements..." class="w-full bg-brand-dark/60 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:border-brand-primary outline-none transition"></textarea>
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent text-white font-bold py-4 rounded-xl shadow-lg hover:opacity-95 transition">Send Project Request 🚀</button>
                     </form>
                 </div>
             </div>
@@ -207,10 +345,13 @@
 
     <!-- FOOTER -->
     <footer class="bg-black py-12 border-t border-white/10 text-center">
-        <p class="text-slate-500 text-sm">&copy; 2026 Pixel Forge. All rights reserved. Developed by Faisu & Jasmine 💨🔥</p>
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span class="font-black text-lg text-white">DIGITAL PIXEL FORGE<span class="text-brand-secondary">📡</span></span>
+            <p class="text-slate-500 text-xs">&copy; 2026 Digital Pixel Forge. All rights reserved. Built with ❤️ by Faisu & Jasmine.</p>
+        </div>
     </footer>
 
-    <!-- SMART AI CHATBOT WIDGET (FIXED VISIBILITY & POSITION) -->
+    <!-- SMART AI CHATBOT WIDGET -->
     <div class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
         <!-- Chat Window -->
         <div id="chat-window" class="hidden w-80 md:w-96 bg-brand-surface border border-white/20 rounded-2xl shadow-2xl mb-4 overflow-hidden flex flex-col h-[500px] transition-all duration-300 origin-bottom-right transform scale-95 opacity-0">
@@ -249,7 +390,7 @@
             </div>
         </div>
 
-        <!-- Chat Toggle Button (Always Visible) -->
+        <!-- Chat Toggle Button -->
         <button onclick="toggleChat()" class="bg-gradient-to-r from-brand-primary to-brand-secondary hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-3xl transition transform hover:scale-110">
             <i class="fa-solid fa-robot"></i>
         </button>
@@ -260,7 +401,6 @@
     <script>
         AOS.init({ once: true, duration: 800 });
 
-        // Chatbot Logic
         const chatWindow = document.getElementById('chat-window');
         const messages = document.getElementById('chat-messages');
         const userInput = document.getElementById('user-input');
@@ -348,7 +488,7 @@
                 return "Our projects start at ₹25,000 for standard high-performance websites. Custom web and mobile apps vary based on requirements. Want to chat on WhatsApp for a custom estimate? (+91 9620024812)";
             }
             if (msg.includes('service') || msg.includes('offer') || msg.includes('do') || msg.includes('development')) {
-                return "We specialize in Web Development (Next.js/React), Mobile App Engineering (iOS/Android), and Scalable Cloud DevOps architecture.";
+                return "We offer 6 core services: Custom Web Apps, Mobile App Engineering, Database & Cloud Backends, Security & Rate Limiting, CI/CD Hosting, and AI Bot Integration!";
             }
             if (msg.includes('location') || msg.includes('address') || msg.includes('where') || msg.includes('bangalore')) {
                 return "We are based at Third Floor, V268, Royal Space, HSR Layout, Bengaluru, Karnataka 560068. Come visit us!";
