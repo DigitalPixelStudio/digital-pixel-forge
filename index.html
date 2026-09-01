@@ -1,45 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Forge📡 | Digital Solutions Bangalore</title>
+    <title>Pixel Forge📡 | Future-Ready Digital Solutions</title>
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animate On Scroll (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
                     colors: {
                         brand: {
-                            dark: '#0f172a',
-                            primary: '#3b82f6',
-                            accent: '#8b5cf6',
-                            light: '#f8fafc'
+                            dark: '#0B0E14',
+                            primary: '#6366f1',
+                            secondary: '#ec4899',
+                            accent: '#06b6d4',
+                            surface: '#151a25'
                         }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+
     <style>
-        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        .bot-bubble { animation: bounce 2s infinite; }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-        .chat-scroll::-webkit-scrollbar { width: 6px; }
-        .chat-scroll::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 4px; }
+        .glass {
+            background: rgba(21, 26, 37, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #6366f1, #ec4899, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.3);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
     </style>
 </head>
-<body class="font-sans bg-brand-light text-slate-800 antialiased overflow-x-hidden">
+<body class="font-sans bg-brand-dark text-white overflow-x-hidden selection:bg-brand-secondary selection:text-white">
 
     <!-- FLOATING WHATSAPP BUTTON -->
     <a href="https://wa.me/919620024812?text=Hi%20Digital%20Pixel%20Forge,%20I%20want%20to%20discuss%20a%20project!" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
@@ -47,19 +74,21 @@
     </a>
 
     <!-- NAVIGATION -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <i class="fa-solid fa-microchip text-3xl text-brand-primary"></i>
-                    <span class="font-black text-2xl tracking-tighter text-brand-dark">PIXEL FORGE<span class="text-brand-primary">📡</span></span>
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center shadow-lg group-hover:rotate-12 transition">
+                        <i class="fa-solid fa-microchip text-white"></i>
+                    </div>
+                    <span class="font-black text-2xl tracking-tight text-white group-hover:text-brand-accent transition">PIXEL FORGE<span class="text-brand-secondary">📡</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#services" class="text-slate-600 hover:text-brand-primary font-medium transition">Services</a>
-                    <a href="#about" class="text-slate-600 hover:text-brand-primary font-medium transition">About</a>
-                    <a href="#faq" class="text-slate-600 hover:text-brand-primary font-medium transition">FAQ</a>
-                    <a href="https://wa.me/919620024812" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full font-bold transition flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp"></i> Chat Now
+                    <a href="#services" class="text-slate-300 hover:text-white font-medium transition">Services</a>
+                    <a href="#process" class="text-slate-300 hover:text-white font-medium transition">Process</a>
+                    <a href="#stats" class="text-slate-300 hover:text-white font-medium transition">Stats</a>
+                    <a href="https://wa.me/919620024812" target="_blank" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white px-6 py-2.5 rounded-full font-bold transition shadow-lg shadow-green-500/20 flex items-center gap-2 transform hover:scale-105">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Chat Now
                     </a>
                 </div>
             </div>
@@ -67,293 +96,126 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-dark">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center opacity-10"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/90 to-transparent"></div>
-        
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left">
-            <div class="lg:w-2/3 fade-in-up" style="animation-delay: 0.1s;">
-                <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
-                    Build Your Digital <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Empire Today.</span>
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-sm font-semibold mb-6">
+                    <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span> Available for New Projects
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+                    We Build <br>
+                    <span class="text-gradient">Digital Reality.</span>
                 </h1>
-                <p class="text-xl text-slate-300 mb-8 max-w-2xl">
-                    Premium Web Development, App Engineering, and Cloud Architecture based in Bangalore. Led by Faisu & Jasmine.
+                <p class="text-lg text-slate-400 mb-8 max-w-lg leading-relaxed">
+                    From high-performance web apps to scalable cloud infrastructure. Pixel Forge turns your vision into a market-dominating product in Bangalore. Led by Faisu & Jasmine.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#contact" class="bg-brand-primary hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition shadow-lg shadow-blue-500/30">
-                        Get Started
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-white text-brand-dark hover:bg-slate-200 px-8 py-4 rounded-full font-bold text-lg transition shadow-[0_0_20px_rgba(255,255,255,0.3)] flex items-center justify-center gap-2">
+                        Start Project <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    <a href="https://wa.me/919620024812" class="border border-slate-600 hover:border-white text-white px-8 py-4 rounded-lg font-bold text-lg transition flex items-center justify-center gap-2">
+                    <a href="https://wa.me/919620024812" target="_blank" class="glass text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition flex items-center justify-center gap-2 border border-white/10">
                         <i class="fa-brands fa-whatsapp"></i> 9620024812
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- SERVICES GRID -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-black text-brand-dark mb-4">Our Expertise</h2>
-                <div class="w-20 h-1 bg-brand-primary mx-auto rounded"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 bg-slate-50 rounded-2xl hover:shadow-xl transition duration-300 border border-slate-100 group">
-                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-primary transition">
-                        <i class="fa-solid fa-code text-2xl text-brand-primary group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Web Development</h3>
-                    <p class="text-slate-600">High-performance websites using React, Next.js, and modern frameworks tailored for conversion.</p>
-                </div>
-
-                <div class="p-8 bg-slate-50 rounded-2xl hover:shadow-xl transition duration-300 border border-slate-100 group">
-                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent transition">
-                        <i class="fa-solid fa-mobile-screen text-2xl text-brand-accent group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Mobile Apps</h3>
-                    <p class="text-slate-600">Native and Cross-platform apps (Flutter/React Native) that users love to keep installed.</p>
-                </div>
-
-                <div class="p-8 bg-slate-50 rounded-2xl hover:shadow-xl transition duration-300 border border-slate-100 group">
-                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-500 transition">
-                        <i class="fa-solid fa-cloud text-2xl text-green-500 group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Cloud & DevOps</h3>
-                    <p class="text-slate-600">Scalable infrastructure on AWS/Azure with CI/CD pipelines ensuring zero downtime.</p>
+            <div class="relative hidden lg:block" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative z-10">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Cyberpunk Tech" class="rounded-2xl shadow-2xl border border-white/10 w-full object-cover h-[500px]">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT FORM SECTION -->
-    <section id="contact" class="py-20 bg-brand-dark relative">
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="text-white">
-                    <h2 class="text-3xl font-black mb-6">Let's Build Something Legendary</h2>
-                    <p class="text-slate-300 mb-8 text-lg">Ready to scale? Fill out the form or reach us directly.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-brand-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fa-solid fa-location-dot text-brand-primary text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Visit Us</h4>
-                                <p class="text-slate-400">No 1, M.G Road, Brigade Road<br>Bangalore, Karnataka</p>
-                            </div>
-                        </div>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-black mb-4">Our <span class="text-gradient">Expertise</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">We engineer scalable ecosystems designed for maximum conversion and growth.</p>
+            </div>
 
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-2xl card-hover transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-primary/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-primary transition duration-300">
+                        <i class="fa-solid fa-laptop-code text-2xl text-brand-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Web Development</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Next.js, React, and modern web applications optimized for SEO and lightning speed.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl card-hover transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-brand-secondary/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-secondary transition duration-300">
+                        <i class="fa-solid fa-mobile-screen-button text-2xl text-brand-secondary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Mobile Apps</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Native performance with Flutter & React Native for iOS and Android platforms.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl card-hover transition duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-brand-accent/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent transition duration-300">
+                        <i class="fa-solid fa-server text-2xl text-brand-accent group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Cloud & DevOps</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">AWS, Supabase, MongoDB architecture with CI/CD pipelines ensuring zero downtime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section id="stats" class="py-20 relative overflow-hidden bg-brand-surface/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2 counter" data-target="50">50+</h3><p class="text-brand-primary font-mono uppercase tracking-widest text-sm">Projects Delivered</p></div>
+                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2 counter" data-target="98">98%</h3><p class="text-brand-secondary font-mono uppercase tracking-widest text-sm">Client Satisfaction</p></div>
+                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2 counter" data-target="5">5+</h3><p class="text-brand-accent font-mono uppercase tracking-widest text-sm">Years Experience</p></div>
+                <div data-aos="zoom-in"><h3 class="text-4xl md:text-5xl font-black text-white mb-2 counter" data-target="24">24/7</h3><p class="text-white font-mono uppercase tracking-widest text-sm">Support</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass rounded-3xl p-8 md:p-12 overflow-hidden relative border border-white/10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-black mb-6">Let's Start Your <span class="text-gradient">Project</span></h2>
+                        <p class="text-slate-400 mb-8">Fill the form or reach us directly via WhatsApp.</p>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 cursor-pointer" onclick="window.location.href='https://wa.me/919620024812'">
+                                <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400"><i class="fa-brands fa-whatsapp text-2xl"></i></div>
+                                <div><p class="text-xs text-slate-400 uppercase">WhatsApp Us</p><p class="font-bold text-lg">+91 9620024812</p></div>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-lg">WhatsApp</h4>
-                                <p class="text-slate-400">+91 9620024812</p>
+                            <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5">
+                                <div class="w-12 h-12 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary"><i class="fa-solid fa-location-dot text-2xl"></i></div>
+                                <div><p class="text-xs text-slate-400 uppercase">Visit Office</p><p class="font-bold text-lg">Third Floor, V268, Royal Space, HSR Layout, Bengaluru</p></div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-2xl">
-                    <form id="leadForm" class="space-y-6">
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
-                            <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition" placeholder="John Doe">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
-                            <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition" placeholder="+91 98765 43210">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Service Needed</label>
-                            <select class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition">
-                                <option>Web Development</option>
-                                <option>Mobile App</option>
-                                <option>Cloud/DevOps</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="w-full bg-brand-primary hover:bg-blue-600 text-white font-bold py-4 rounded-lg transition shadow-lg">
-                            Send Request <i class="fa-solid fa-paper-plane ml-2"></i>
-                        </button>
+                    <form id="contactForm" class="space-y-4">
+                        <input type="text" placeholder="Your Name" required class="w-full bg-brand-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-primary outline-none">
+                        <input type="tel" placeholder="Phone Number" required class="w-full bg-brand-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-primary outline-none">
+                        <input type="email" placeholder="Email Address" required class="w-full bg-brand-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-primary outline-none">
+                        <textarea rows="4" placeholder="Tell us about your project..." class="w-full bg-brand-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-primary outline-none"></textarea>
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold py-4 rounded-xl shadow-lg">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section id="faq" class="py-20 bg-slate-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-black text-center text-brand-dark mb-12">Frequently Asked Questions</h2>
-            
-            <div class="space-y-4">
-                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 open:ring-2 open:ring-brand-primary/20 transition-all">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6">
-                        <span>How long does it take to build a website?</span>
-                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-primary"></i></span>
-                    </summary>
-                    <div class="text-slate-600 px-6 pb-6 pt-0">
-                        Typically, a standard business website takes 2-3 weeks. Complex e-commerce or custom web apps may take 6-8 weeks depending on requirements.
-                    </div>
-                </details>
-
-                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 open:ring-2 open:ring-brand-primary/20 transition-all">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6">
-                        <span>Do you provide post-launch support?</span>
-                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-primary"></i></span>
-                    </summary>
-                    <div class="text-slate-600 px-6 pb-6 pt-0">
-                        Yes! We offer comprehensive maintenance packages including security updates, backups, and feature enhancements to keep your digital presence sharp.
-                    </div>
-                </details>
-
-                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 open:ring-2 open:ring-brand-primary/20 transition-all">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6">
-                        <span>Can you help with SEO and Marketing?</span>
-                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-primary"></i></span>
-                    </summary>
-                    <div class="text-slate-600 px-6 pb-6 pt-0">
-                        Absolutely. We build SEO-friendly structures by default and can integrate analytics and marketing tools to help you grow your audience.
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
     <!-- FOOTER -->
-    <footer class="bg-brand-dark text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-center md:text-left">
-                <span class="font-black text-2xl text-white tracking-tighter">PIXEL FORGE<span class="text-brand-primary">📡</span></span>
-                <p class="mt-2 text-sm">Innovating at the speed of thought.</p>
-            </div>
-            <div class="text-sm text-center md:text-right">
-                &copy; 2026 Pixel Forge. All rights reserved. <br>
-                Developed by Faisu & Jasmine 💨🔥
-            </div>
-        </div>
+    <footer class="bg-black py-12 border-t border-white/10 text-center">
+        <p class="text-slate-500 text-sm">&copy; 2026 Pixel Forge. All rights reserved. Developed by Faisu & Jasmine 💨🔥</p>
     </footer>
 
-    <!-- ADVANCED CHATBOT WIDGET -->
-    <div id="chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="chat-window" class="hidden w-80 md:w-96 bg-white rounded-2xl shadow-2xl mb-4 overflow-hidden border border-slate-200 flex flex-col h-[500px] transition-all duration-300 origin-bottom-right transform scale-95 opacity-0">
-            <div class="bg-brand-primary p-4 text-white flex justify-between items-center">
-                <div class="flex items-center gap-2">
-                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span class="font-bold">ForgeBot AI</span>
-                </div>
-                <button onclick="toggleChat()" class="hover:bg-white/20 p-1 rounded"><i class="fa-solid fa-times"></i></button>
-            </div>
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto chat-scroll bg-slate-50 space-y-3">
-                <div class="flex justify-start">
-                    <div class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] text-sm">
-                        Hello! 👋 I'm ForgeBot. How can I help you build your project today?
-                    </div>
-                </div>
-            </div>
-            <div class="p-3 bg-white border-t border-slate-200 flex gap-2">
-                <input type="text" id="user-input" placeholder="Type a message..." class="flex-1 bg-slate-100 border-none rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-brand-primary outline-none" onkeypress="handleKeyPress(event)">
-                <button onclick="sendMessage()" class="bg-brand-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fa-solid fa-paper-plane"></i></button>
-            </div>
-        </div>
-        <button onclick="toggleChat()" class="bg-brand-primary hover:bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg shadow-blue-500/40 flex items-center justify-center text-2xl transition transform hover:scale-110 bot-bubble">
-            <i class="fa-solid fa-comment-dots"></i>
-        </button>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        const chatWindow = document.getElementById('chat-window');
-        const messagesContainer = document.getElementById('chat-messages');
-        const userInput = document.getElementById('user-input');
-        let isOpen = false;
-
-        function toggleChat() {
-            isOpen = !isOpen;
-            if (isOpen) {
-                chatWindow.classList.remove('hidden');
-                setTimeout(() => {
-                    chatWindow.classList.remove('scale-95', 'opacity-0');
-                    chatWindow.classList.add('scale-100', 'opacity-100');
-                }, 10);
-                userInput.focus();
-            } else {
-                chatWindow.classList.add('scale-95', 'opacity-0');
-                setTimeout(() => chatWindow.classList.add('hidden'), 300);
-            }
-        }
-
-        function handleKeyPress(e) {
-            if (e.key === 'Enter') sendMessage();
-        }
-
-        function sendMessage() {
-            const text = userInput.value.trim();
-            if (!text) return;
-            addMessage(text, 'user');
-            userInput.value = '';
-            setTimeout(() => {
-                const response = getBotResponse(text);
-                addMessage(response, 'bot');
-            }, 600);
-        }
-
-        function addMessage(text, sender) {
-            const div = document.createElement('div');
-            div.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
-            const bubble = document.createElement('div');
-            bubble.className = `px-4 py-2 rounded-2xl shadow-sm max-w-[85%] text-sm ${
-                sender === 'user' 
-                ? 'bg-brand-primary text-white rounded-tr-none' 
-                : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none'
-            }`;
-            bubble.innerText = text;
-            div.appendChild(bubble);
-            messagesContainer.appendChild(div);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
-
-        function getBotResponse(input) {
-            input = input.toLowerCase();
-            if (input.includes('price') || input.includes('cost')) {
-                return "Our pricing starts at ₹25,000 for basic websites. For a custom quote, please share your requirements or call us at 9620024812.";
-            }
-            if (input.includes('location') || input.includes('address') || input.includes('where')) {
-                return "We are located at No 1, M.G Road, Brigade Road, Bangalore. You can visit us anytime!";
-            }
-            if (input.includes('time') || input.includes('long')) {
-                return "A standard website usually takes 2-3 weeks. Mobile apps might take 4-6 weeks depending on complexity.";
-            }
-            if (input.includes('hello') || input.includes('hi')) {
-                return "Hi there! Ready to start your digital journey? Tell me what you need.";
-            }
-            if (input.includes('contact') || input.includes('phone') || input.includes('number')) {
-                return "You can reach us at +91 9620024812 or fill out the contact form on this page.";
-            }
-            if (input.includes('service') || input.includes('do')) {
-                return "We specialize in Web Development, Mobile Apps (Android/iOS), and Cloud/DevOps solutions.";
-            }
-            return "That's an interesting question! Could you clarify? Or you can call us directly at 9620024812 for immediate assistance.";
-        }
-
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
+        AOS.init({ once: true, duration: 800 });
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const btn = this.querySelector('button');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
-            btn.disabled = true;
-            setTimeout(() => {
-                alert('Thank you! Your request has been sent to Pixel Forge. We will contact you shortly.');
-                this.reset();
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-            }, 1500);
+            alert('Message Sent! 🚀 We will contact you shortly.');
+            this.reset();
         });
     </script>
 </body>
