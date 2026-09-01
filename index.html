@@ -18,8 +18,8 @@
                     colors: {
                         brand: {
                             dark: '#0f172a',
-                            primary: '#3b82f6', // Electric Blue
-                            accent: '#8b5cf6',  // Violet
+                            primary: '#3b82f6',
+                            accent: '#8b5cf6',
                             light: '#f8fafc'
                         }
                     },
@@ -143,7 +143,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-lg">Visit Us</h4>
-                                <p class="text-slate-400">Third Floor, V268, Royal Space, HSR Layout<br>Bengaluru, Karnataka 560068</p>
+                                <p class="text-slate-400">No 1, M.G Road, Brigade Road<br>Bangalore, Karnataka</p>
                             </div>
                         </div>
 
@@ -240,8 +240,108 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- ADVANCED CHATBOT WIDGET -->
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <div id="chat-window" class="hidden w-80 md:w-96 bg-white rounded-2xl shadow-2xl mb-4 overflow-hidden border border-slate-200 flex flex-col h-[500px] transition-all duration-300 origin-bottom-right transform scale-95 opacity-0">
+            <div class="bg-brand-primary p-4 text-white flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span class="font-bold">ForgeBot AI</span>
+                </div>
+                <button onclick="toggleChat()" class="hover:bg-white/20 p-1 rounded"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto chat-scroll bg-slate-50 space-y-3">
+                <div class="flex justify-start">
+                    <div class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] text-sm">
+                        Hello! 👋 I'm ForgeBot. How can I help you build your project today?
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 bg-white border-t border-slate-200 flex gap-2">
+                <input type="text" id="user-input" placeholder="Type a message..." class="flex-1 bg-slate-100 border-none rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-brand-primary outline-none" onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()" class="bg-brand-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button onclick="toggleChat()" class="bg-brand-primary hover:bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg shadow-blue-500/40 flex items-center justify-center text-2xl transition transform hover:scale-110 bot-bubble">
+            <i class="fa-solid fa-comment-dots"></i>
+        </button>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
     <script>
+        const chatWindow = document.getElementById('chat-window');
+        const messagesContainer = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        let isOpen = false;
+
+        function toggleChat() {
+            isOpen = !isOpen;
+            if (isOpen) {
+                chatWindow.classList.remove('hidden');
+                setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+                userInput.focus();
+            } else {
+                chatWindow.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => chatWindow.classList.add('hidden'), 300);
+            }
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function sendMessage() {
+            const text = userInput.value.trim();
+            if (!text) return;
+            addMessage(text, 'user');
+            userInput.value = '';
+            setTimeout(() => {
+                const response = getBotResponse(text);
+                addMessage(response, 'bot');
+            }, 600);
+        }
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
+            const bubble = document.createElement('div');
+            bubble.className = `px-4 py-2 rounded-2xl shadow-sm max-w-[85%] text-sm ${
+                sender === 'user' 
+                ? 'bg-brand-primary text-white rounded-tr-none' 
+                : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none'
+            }`;
+            bubble.innerText = text;
+            div.appendChild(bubble);
+            messagesContainer.appendChild(div);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function getBotResponse(input) {
+            input = input.toLowerCase();
+            if (input.includes('price') || input.includes('cost')) {
+                return "Our pricing starts at ₹25,000 for basic websites. For a custom quote, please share your requirements or call us at 9620024812.";
+            }
+            if (input.includes('location') || input.includes('address') || input.includes('where')) {
+                return "We are located at No 1, M.G Road, Brigade Road, Bangalore. You can visit us anytime!";
+            }
+            if (input.includes('time') || input.includes('long')) {
+                return "A standard website usually takes 2-3 weeks. Mobile apps might take 4-6 weeks depending on complexity.";
+            }
+            if (input.includes('hello') || input.includes('hi')) {
+                return "Hi there! Ready to start your digital journey? Tell me what you need.";
+            }
+            if (input.includes('contact') || input.includes('phone') || input.includes('number')) {
+                return "You can reach us at +91 9620024812 or fill out the contact form on this page.";
+            }
+            if (input.includes('service') || input.includes('do')) {
+                return "We specialize in Web Development, Mobile Apps (Android/iOS), and Cloud/DevOps solutions.";
+            }
+            return "That's an interesting question! Could you clarify? Or you can call us directly at 9620024812 for immediate assistance.";
+        }
+
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = this.querySelector('button');
