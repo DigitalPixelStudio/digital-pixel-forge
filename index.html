@@ -3,173 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Pixel Forge 🔥 | Web & Mobile App Development Experts</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Pixel Forge📡 | Digital Solutions Bangalore</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#3b82f6', // Electric Blue
+                            accent: '#8b5cf6',  // Violet
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        .bot-bubble { animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        .chat-scroll::-webkit-scrollbar { width: 6px; }
+        .chat-scroll::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 4px; }
+    </style>
 </head>
-<body class="bg-black text-white font-sans antialiased selection:bg-red-600 selection:text-white">
+<body class="font-sans bg-brand-light text-slate-800 antialiased overflow-x-hidden">
 
-    <!-- Floating WhatsApp Button -->
+    <!-- FLOATING WHATSAPP BUTTON -->
     <a href="https://wa.me/919620024812?text=Hi%20Digital%20Pixel%20Forge,%20I%20want%20to%20discuss%20a%20project!" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
-        <i class="fab fa-whatsapp text-3xl"></i>
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- Navbar -->
-    <header class="border-b border-zinc-800 bg-black/80 backdrop-blur-md sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-                <span class="text-red-500 text-2xl font-black tracking-tighter">DIGITAL PIXEL FORGE</span>
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fa-solid fa-microchip text-3xl text-brand-primary"></i>
+                    <span class="font-black text-2xl tracking-tighter text-brand-dark">PIXEL FORGE<span class="text-brand-primary">📡</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="text-slate-600 hover:text-brand-primary font-medium transition">Services</a>
+                    <a href="#about" class="text-slate-600 hover:text-brand-primary font-medium transition">About</a>
+                    <a href="#faq" class="text-slate-600 hover:text-brand-primary font-medium transition">FAQ</a>
+                    <a href="https://wa.me/919620024812" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full font-bold transition flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i> Chat Now
+                    </a>
+                </div>
             </div>
-            <div class="hidden md:flex items-center space-x-6 text-sm text-zinc-300">
-                <span>+91 96200 24812</span>
-                <span>contact@digitalpixelforge.com</span>
-            </div>
-            <a href="https://wa.me/919620024812?text=Hi%20Digital%20Pixel%20Forge,%20I%20want%20a%20quote!" class="bg-red-600 hover:bg-red-500 text-white px-5 py-2.5 rounded-full text-sm font-bold transition">Get a Quote</a>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="py-20 px-6 text-center max-w-5xl mx-auto">
-        <span class="bg-red-500/10 text-red-500 border border-red-500/30 text-xs px-4 py-1.5 rounded-full font-mono uppercase tracking-widest inline-block mb-6">Digital Solutions for Ambitious Businesses</span>
-        <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-            Websites, mobile apps, & hosting to help businesses scale with confidence.
-        </h1>
-        <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10">
-            We design and build fast, modern websites and mobile apps that help businesses grow. Led by Faisu & Jasmine.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="https://wa.me/919620024812?text=Hi%20Digital%20Pixel%20Forge,%20let%27s%20get%20started!" class="bg-red-600 hover:bg-red-500 text-white font-bold px-8 py-4 rounded-full text-base transition shadow-lg shadow-red-600/30">Get Quote on WhatsApp</a>
-            <a href="#deliverables" class="bg-zinc-900 hover:bg-zinc-800 text-white font-bold px-8 py-4 rounded-full text-base border border-zinc-800 transition">View Deliverables</a>
-        </div>
-    </section>
-
-    <!-- Who We Are -->
-    <section class="py-16 px-6 bg-zinc-950 border-t border-b border-zinc-900">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-xs uppercase tracking-widest text-red-500 font-mono mb-3">Who we are ?</h2>
-            <h3 class="text-2xl md:text-4xl font-bold mb-6">We design and build fast, modern websites and mobile apps.</h3>
-            <p class="text-zinc-400 text-sm md:text-base leading-relaxed">
-                Our team blends strategy, design, and engineering to deliver clean, scalable solutions focused on usability, performance, and measurable results. From start-ups to established enterprises, we've got your back.
-            </p>
-        </div>
-    </section>
-
-    <!-- What You Receive -->
-    <section id="deliverables" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="mb-16">
-            <span class="text-red-500 font-mono text-xs uppercase tracking-wider">What you receive</span>
-            <h2 class="text-3xl md:text-5xl font-extrabold mt-2">Everything needed to launch.</h2>
-            <p class="text-zinc-400 mt-2">A complete business website—not simply a collection of pages.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="p-8 bg-zinc-900/60 rounded-3xl border border-zinc-800 hover:border-red-500/50 transition">
-                <span class="text-red-500 font-mono font-bold text-xl mb-4 block">01</span>
-                <h3 class="text-xl font-bold mb-2">Responsive business website</h3>
-                <p class="text-zinc-400 text-sm">A polished experience designed carefully for mobile, tablet, laptop, and desktop.</p>
-            </div>
-            <div class="p-8 bg-zinc-900/60 rounded-3xl border border-zinc-800 hover:border-red-500/50 transition">
-                <span class="text-red-500 font-mono font-bold text-xl mb-4 block">02</span>
-                <h3 class="text-xl font-bold mb-2">Conversion-focused design</h3>
-                <p class="text-zinc-400 text-sm">Clear messaging, thoughtful hierarchy, and calls to action that guide visitors towards enquiry.</p>
-            </div>
-            <div class="p-8 bg-zinc-900/60 rounded-3xl border border-zinc-800 hover:border-red-500/50 transition">
-                <span class="text-red-500 font-mono font-bold text-xl mb-4 block">03</span>
-                <h3 class="text-xl font-bold mb-2">WhatsApp & lead capture</h3>
-                <p class="text-zinc-400 text-sm">Contact forms, WhatsApp direct chat, maps, and call actions integrated around your sales process.</p>
-            </div>
-            <div class="p-8 bg-zinc-900/60 rounded-3xl border border-zinc-800 hover:border-red-500/50 transition">
-                <span class="text-red-500 font-mono font-bold text-xl mb-4 block">04</span>
-                <h3 class="text-xl font-bold mb-2">SEO-ready foundation</h3>
-                <p class="text-zinc-400 text-sm">Clean structure, metadata, sitemap, indexing, image optimization, and performance basics.</p>
-            </div>
-            <div class="p-8 bg-zinc-900/60 rounded-3xl border border-zinc-800 hover:border-red-500/50 transition">
-                <span class="text-red-500 font-mono font-bold text-xl mb-4 block">05</span>
-                <h3 class="text-xl font-bold mb-2">Analytics & tracking</h3>
-                <p class="text-zinc-400 text-sm">Measurement for visits, enquiries, and important actions so campaign performance is visible.</p>
-            </div>
-            <div class="p-8 bg-zinc-900/60 rounded-3xl border border-zinc-800 hover:border-red-500/50 transition">
-                <span class="text-red-500 font-mono font-bold text-xl mb-4 block">06</span>
-                <h3 class="text-xl font-bold mb-2">Launch & support</h3>
-                <p class="text-zinc-400 text-sm">Hosting setup, SSL, testing, deployment, source-code handover, and support after launch.</p>
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-dark">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/90 to-transparent"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left">
+            <div class="lg:w-2/3 fade-in-up" style="animation-delay: 0.1s;">
+                <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+                    Build Your Digital <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Empire Today.</span>
+                </h1>
+                <p class="text-xl text-slate-300 mb-8 max-w-2xl">
+                    Premium Web Development, App Engineering, and Cloud Architecture based in Bangalore. Led by Faisu & Jasmine.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#contact" class="bg-brand-primary hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition shadow-lg shadow-blue-500/30">
+                        Get Started
+                    </a>
+                    <a href="https://wa.me/919620024812" class="border border-slate-600 hover:border-white text-white px-8 py-4 rounded-lg font-bold text-lg transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i> 9620024812
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-20 px-6 bg-zinc-950 border-t border-zinc-900">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">What our happy clients say about us.</h2>
+    <!-- SERVICES GRID -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-brand-dark mb-4">Our Expertise</h2>
+                <div class="w-20 h-1 bg-brand-primary mx-auto rounded"></div>
+            </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 bg-zinc-900/50 rounded-3xl border border-zinc-800">
-                    <p class="text-zinc-300 text-sm mb-6">"Digital Pixel Forge went above and beyond to make sure we got something we were happy with. Their attention to detail is exceptional."</p>
-                    <h4 class="font-bold">Shabrin Taj</h4>
-                    <span class="text-xs text-zinc-500">CEO, SAS Medical College</span>
+                <div class="p-8 bg-slate-50 rounded-2xl hover:shadow-xl transition duration-300 border border-slate-100 group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-primary transition">
+                        <i class="fa-solid fa-code text-2xl text-brand-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Web Development</h3>
+                    <p class="text-slate-600">High-performance websites using React, Next.js, and modern frameworks tailored for conversion.</p>
                 </div>
-                <div class="p-8 bg-zinc-900/50 rounded-3xl border border-zinc-800">
-                    <p class="text-zinc-300 text-sm mb-6">"The team at Digital Pixel Forge was incredibly attentive and made sure every detail was perfect. Highly recommended!"</p>
-                    <h4 class="font-bold">Amna Khanum</h4>
-                    <span class="text-xs text-zinc-500">CEO, Aet Software</span>
+
+                <div class="p-8 bg-slate-50 rounded-2xl hover:shadow-xl transition duration-300 border border-slate-100 group">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent transition">
+                        <i class="fa-solid fa-mobile-screen text-2xl text-brand-accent group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Mobile Apps</h3>
+                    <p class="text-slate-600">Native and Cross-platform apps (Flutter/React Native) that users love to keep installed.</p>
                 </div>
-                <div class="p-8 bg-zinc-900/50 rounded-3xl border border-zinc-800">
-                    <p class="text-zinc-300 text-sm mb-6">"We're beyond satisfied — Digital Pixel Forge made the entire process seamless and rewarding. Amazing work!"</p>
-                    <h4 class="font-bold">Dr Minu</h4>
-                    <span class="text-xs text-zinc-500">Managing Director, Wish Integrated Cosmetic Clinic</span>
+
+                <div class="p-8 bg-slate-50 rounded-2xl hover:shadow-xl transition duration-300 border border-slate-100 group">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-500 transition">
+                        <i class="fa-solid fa-cloud text-2xl text-green-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cloud & DevOps</h3>
+                    <p class="text-slate-600">Scalable infrastructure on AWS/Azure with CI/CD pipelines ensuring zero downtime.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 px-6 max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-12 text-center">Questions, answered clearly.</h2>
-        <div class="space-y-4">
-            <details class="p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800 group">
-                <summary class="font-bold cursor-pointer flex justify-between items-center">How long will my website take? <span class="text-red-500">+</span></summary>
-                <p class="text-zinc-400 text-sm mt-3">A focused five-page website usually takes one to three weeks, depending on content readiness and feedback speed.</p>
-            </details>
-            <details class="p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800 group">
-                <summary class="font-bold cursor-pointer flex justify-between items-center">Is hosting included? <span class="text-red-500">+</span></summary>
-                <p class="text-zinc-400 text-sm mt-3">Hosting and SSL are included in our starter website plans for the stated term. Renewal costs and conditions are confirmed before work begins.</p>
-            </details>
-            <details class="p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800 group">
-                <summary class="font-bold cursor-pointer flex justify-between items-center">Will it work properly on mobile? <span class="text-red-500">+</span></summary>
-                <p class="text-zinc-400 text-sm mt-3">Yes. Every website is designed and tested for mobile phones, tablets, laptops, and desktop screens.</p>
-            </details>
-            <details class="p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800 group">
-                <summary class="font-bold cursor-pointer flex justify-between items-center">Can I update the content myself? <span class="text-red-500">+</span></summary>
-                <p class="text-zinc-400 text-sm mt-3">Choose a dynamic plan if you need a content-management system. We will also explain how to manage the agreed content areas.</p>
-            </details>
-            <details class="p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800 group">
-                <summary class="font-bold cursor-pointer flex justify-between items-center">Is SEO included? <span class="text-red-500">+</span></summary>
-                <p class="text-zinc-400 text-sm mt-3">Technical SEO foundations are included. Ongoing content creation, link building, and ranking campaigns are separate services.</p>
-            </details>
-            <details class="p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800 group">
-                <summary class="font-bold cursor-pointer flex justify-between items-center">Who owns the website? <span class="text-red-500">+</span></summary>
-                <p class="text-zinc-400 text-sm mt-3">Ownership, source-code handover, hosting access, and third-party accounts are clearly defined in your proposal.</p>
-            </details>
+    <!-- CONTACT FORM SECTION -->
+    <section id="contact" class="py-20 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h2 class="text-3xl font-black mb-6">Let's Build Something Legendary</h2>
+                    <p class="text-slate-300 mb-8 text-lg">Ready to scale? Fill out the form or reach us directly.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-location-dot text-brand-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Visit Us</h4>
+                                <p class="text-slate-400">Third Floor, V268, Royal Space, HSR Layout<br>Bengaluru, Karnataka 560068</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">WhatsApp</h4>
+                                <p class="text-slate-400">+91 9620024812</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-2xl">
+                    <form id="leadForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
+                            <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition" placeholder="+91 98765 43210">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Service Needed</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition">
+                                <option>Web Development</option>
+                                <option>Mobile App</option>
+                                <option>Cloud/DevOps</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-primary hover:bg-blue-600 text-white font-bold py-4 rounded-lg transition shadow-lg">
+                            Send Request <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Map & Footer Section -->
-    <footer class="bg-zinc-950 border-t border-zinc-900 py-16 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="text-red-500 font-mono text-xs uppercase tracking-wider">Contact Us</span>
-                <h3 class="text-3xl font-bold mt-2 mb-6">Let's go further. We've got your back.</h3>
-                <p class="text-zinc-400 mb-4"><i class="fas fa-envelope text-red-500 mr-3"></i> contact@digitalpixelforge.com</p>
-                <p class="text-zinc-400 mb-6"><i class="fas fa-phone text-red-500 mr-3"></i> +91 96200 24812</p>
-                <p class="text-zinc-400 text-sm leading-relaxed mb-6"><i class="fas fa-map-marker-alt text-red-500 mr-3"></i> Third Floor, V268, Royal Space, 5th Main Road, HSR Layout, Bengaluru, Karnataka, 560068</p>
-                <a href="https://wa.me/919620024812" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full text-sm transition"><i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp</a>
-            </div>
-            <div class="w-full h-80 rounded-3xl overflow-hidden border border-zinc-800">
-                <iframe width="100%" height="100%" style="border:0;" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.3045330364!2d77.638!3d12.916!2m3!1f0!2f0!3f0!3m2!1f1024!2f768!4f13.1!3m3!1m2!1s0x3bae148d3e!2sHSR%20Layout%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1650000000000!5f2!1sen!2sin"></iframe>
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-black text-center text-brand-dark mb-12">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4">
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 open:ring-2 open:ring-brand-primary/20 transition-all">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6">
+                        <span>How long does it take to build a website?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-primary"></i></span>
+                    </summary>
+                    <div class="text-slate-600 px-6 pb-6 pt-0">
+                        Typically, a standard business website takes 2-3 weeks. Complex e-commerce or custom web apps may take 6-8 weeks depending on requirements.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 open:ring-2 open:ring-brand-primary/20 transition-all">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6">
+                        <span>Do you provide post-launch support?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-primary"></i></span>
+                    </summary>
+                    <div class="text-slate-600 px-6 pb-6 pt-0">
+                        Yes! We offer comprehensive maintenance packages including security updates, backups, and feature enhancements to keep your digital presence sharp.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 open:ring-2 open:ring-brand-primary/20 transition-all">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6">
+                        <span>Can you help with SEO and Marketing?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-primary"></i></span>
+                    </summary>
+                    <div class="text-slate-600 px-6 pb-6 pt-0">
+                        Absolutely. We build SEO-friendly structures by default and can integrate analytics and marketing tools to help you grow your audience.
+                    </div>
+                </details>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-zinc-900 text-center text-xs text-zinc-500">
-            Digital Pixel Forge © 2026. All rights reserved. Built by Faisu & Jasmine 💨🔥
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-black text-2xl text-white tracking-tighter">PIXEL FORGE<span class="text-brand-primary">📡</span></span>
+                <p class="mt-2 text-sm">Innovating at the speed of thought.</p>
+            </div>
+            <div class="text-sm text-center md:text-right">
+                &copy; 2026 Pixel Forge. All rights reserved. <br>
+                Developed by Faisu & Jasmine 💨🔥
+            </div>
         </div>
     </footer>
 
+    <!-- JAVASCRIPT -->
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+            setTimeout(() => {
+                alert('Thank you! Your request has been sent to Pixel Forge. We will contact you shortly.');
+                this.reset();
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
